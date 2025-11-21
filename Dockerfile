@@ -15,8 +15,8 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define porta
-ENV PORT=80
-EXPOSE 80
+ENV PORT=8000
+EXPOSE 8000
 
 # Comando para iniciar Anthias
 CMD ["gunicorn", "anthias_django.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]

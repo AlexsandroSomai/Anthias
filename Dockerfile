@@ -19,4 +19,4 @@ ENV PORT=80
 EXPOSE 80
 
 # Comando para iniciar Anthias
-CMD ["python", "server.py"]
+CMD ["gunicorn", "anthias_django.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
